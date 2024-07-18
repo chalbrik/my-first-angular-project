@@ -9,14 +9,12 @@
     <!-- } -->
   </ul>
 
-  <!-- @if (selectedUser) { -->
+  @if (selectedUser) {
   <app-tasks
-    *ngIf="selectedUser; else fallback"
-    [clickedUserName]="selectedUser!.name"
+    [clickedUserId]="selectedUser.id"
+    [clickedUserName]="selectedUser.name"
   ></app-tasks>
-  <!-- } @else { -->
-  <ng-template #fallback>
-    <p id="fallback">Select a user to see their tasks!</p>
-  </ng-template>
-  <!-- } -->
+  } @else {
+  <p id="fallback">Select a user to see their tasks!</p>
+  }
 </main>
